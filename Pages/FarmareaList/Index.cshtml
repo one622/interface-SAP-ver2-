@@ -1,0 +1,89 @@
+﻿@page
+@model BookListRazor.Pages.FarmareaList.IndexModel
+@{
+}
+<br />
+<div Calss="container row p-0 m-0">
+    <div class="form-group row">
+        <div class="col-9">
+            <h2 class="text-info">Farmarea List</h2>
+        </div>
+        <div class="col-3">
+            <a asp-page="Create" class="btn btn-info form-control text-white">Create New Farmarea</a>
+        </div>
+    </div>
+
+    <div class="col-12 border p-3 mt-3">
+        <form method="post">
+            @if (Model.Farmareas.Count() > 0)
+            {
+                <table class="table table-striped border">
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="Farmareas.FirstOrDefault().my_location_id"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Farmareas.FirstOrDefault().dataareaid"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Farmareas.FirstOrDefault().my_location_name"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Farmareas.FirstOrDefault().crop_year"></label>
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                    @foreach (var item in Model.Farmareas)
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.my_location_id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.dataareaid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.my_location_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.crop_year)
+                    </td>
+                    <td>
+                        <button asp-page-handle="Delete" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-sm">Delete</button>
+                        
+                    </td>
+                </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                <p>No books available.</p>
+            }
+        </form>
+    </div>
+
+
+    @*<div class="col-12" style="text-align:center">
+        <br />
+        <span class="he text-info">OR</span>
+        <br /><br />
+    </div>
+    <div class="col-12 border p-3">
+        <table id="DT_load" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>my_location_id</th>
+                    <th>my_location_name</th>
+                    <th>dataareaid</th>
+                    <th>crop_year</th>
+                    <th></th>
+                </tr>
+            </thead>
+        </table>
+    </div>*@
+</div>
+@*@section Scripts{
+    <script src="~/js/farmarea.js"></script>
+}*@
