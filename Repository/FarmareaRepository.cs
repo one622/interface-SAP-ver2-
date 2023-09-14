@@ -58,7 +58,12 @@ namespace BookListRazor.Repository
                 //var data = dbConnection.Query<Farmarea>($@"select * from farmarea f where dataareaid ='104' and crop_year ='66/67' and my_location_name ='10814-02')";
 
                 var data = dbConnection.Query<Farmarea>($@"
-                            select * from farmarea f where dataareaid ='104' and farmer_code  ='10814'");
+                           SELECT truckoil,vehicle_code,transdate::date,oilamoun,uid,approvestatus,approver
+             FROM public.sugarcanetransoil where dataareaid = '102'
+               and public.sugarcanetransoil.approvestatus = 0
+               and public.sugarcanetransoil.truckoil = 'O0001'
+               and public.sugarcanetransoil.finish_addfuel = 1
+               ORDER BY UID");
 
                 return data.ToList();
               

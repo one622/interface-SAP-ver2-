@@ -8,5 +8,7 @@ namespace BookListRazor.Helpers
         public ApplicationContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Farmarea> Farmarea { get; set; }
+
+        
     }
 }
