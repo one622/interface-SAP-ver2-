@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookListRazor.Model;
+using BookListRazor.Repository;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,16 +12,17 @@ namespace BookListRazor.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private IFarmareaRepository _db;
+        public IndexModel(IFarmareaRepository db)
         {
-            _logger = logger;
+            _db = db;
         }
-
         public void OnGet()
         {
-
+            //Farmareas = await _db.LoadFarmarea.ToListAsync();
+            Farmareas = _db.LoadFarmarea().ToList();
         }
+        public IEnumerable<Farmarea> Farmareas { get; set; }
     }
 }

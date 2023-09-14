@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31321.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookListRazor", "BookListRazor.csproj", "{201A90AD-6F8D-446A-8714-9F0522ECEF86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "interface-SAP-ver2", "interface-SAP-ver2.csproj", "{201A90AD-6F8D-446A-8714-9F0522ECEF86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
